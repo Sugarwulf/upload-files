@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html ng-app="upload">
+
+<!-- <head>
+  <title>upload</title>
+  <meta charset="utf-8">
+  <base href="/" />
+  <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/ngApp/css/site.css"/>
+</head>
+
+<body>
+  <div class="container">
+        <h1>upload</h1>
+        <div>
+          <a href="/">Home</a> /
+          <a href="/about">About</a>
+        </div>
+        <hr />
+
+        <ui-view></ui-view>
+  </div> -->
+
+  <head>
+    <title>Upload</title>
+    <meta charset="utf-8">
+    <base href="/">
+    <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/ngApp/css/site.css"/>
+</head>
+</head>
+<body ng-Controller="HomeController as controller">
+
+    <button ng-click="controller.pickFile()">Upload</button>
+
+    <h2>{{controller.file.filename}}</h2>
+    <img ng-src="{{controller.file.url | fpConvert:{w: 400} }}" alt="{{controller.file.filename}}" />
+
+    <ui-view></ui-view>
+
+  <script src="/bower_components/angular/angular.min.js"></script>
+  <script src="/bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+  <script src="/bower_components/angular-resource/angular-resource.min.js"></script>
+  <script src="/bower_components/angular-animate/angular-animate.min.js"></script>
+  <script src="/bower_components/angular-touch/angular-touch.min.js"></script>
+  <script src="/bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+  <scripts src="bower_components/jquery/dist/jquery.min.js"></script>
+  <!-- <script type="text/javascript" src="//api.filepicker.io/v2/filepicker.js"></script> Either this one or the file below-->
+  <script src="bower_components/filepicker-js/filepicker.js"></script>
+  <script src="bower_components/angular-filepicker/dist/angular_filepicker.js"></script>
+  <script src="https://static.filestackapi.com/v3/filestack-0.6.3.js"></script>
+
+  <script src="/ngApp/app.js"></script>
+  <script src="/ngApp/controllers/controllers.js"></script>
+  <script src="/ngApp/services/services.js"></script>
+
+</body>
+
+</html>
